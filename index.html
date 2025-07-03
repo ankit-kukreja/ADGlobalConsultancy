@@ -6,6 +6,18 @@
   <title>Digital Visiting Card - ADGC</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #0e2b54;
+      line-height: 1.6;
+    }
+    
     .banner {
       position: relative;
       height: 400px;
@@ -15,9 +27,9 @@
       align-items: flex-start;
       justify-content: center;
       color: white;
-      padding: 30px 40px;
-      box-sizing: border-box;
+      padding: 30px 20px;
     }
+    
     .banner::before {
       content: "";
       position: absolute;
@@ -28,6 +40,7 @@
       background-color: rgba(58, 91, 137, 0.4);
       z-index: 0;
     }
+    
     .top-bar {
       display: flex;
       justify-content: space-between;
@@ -37,82 +50,91 @@
       position: relative;
       z-index: 1;
     }
+    
     .header-left {
       display: flex;
       flex-direction: column;
       gap: 15px;
+      flex: 1;
     }
+    
     .logo-row {
       display: flex;
       align-items: center;
       gap: 10px;
+      flex-wrap: wrap;
     }
+    
     .logo-row img {
-      width: 80px;
+      width: 60px;
       height: auto;
-      margin: 0;
-      padding: 0;
+      flex-shrink: 0;
     }
+    
     .company-name {
       font-weight: 500;
-      font-size: 30px;
+      font-size: 24px;
       margin: 0;
-      white-space: nowrap;
+      line-height: 1.2;
     }
+    
     .slogan-text {
-      font-size: 45px;
+      font-size: 32px;
       font-weight: bold;
-      line-height: 1.4;
-      margin-top: 60px;
-      margin-left: 80px;
-      text-align: justify;
-      max-width: 500px;
+      line-height: 1.3;
+      margin-top: 40px;
+      text-align: left;
+      max-width: 100%;
     }
+    
     .header-right {
       margin-top: 10px;
-      margin-right: 60px;
+      text-align: right;
+      flex-shrink: 0;
     }
+    
     .header-right .tagline {
-      font-size: 18px;
+      font-size: 14px;
       font-weight: 600;
-      white-space: nowrap;
+      line-height: 1.3;
     }
+    
     .banner * {
       color: white;
     }
+    
     .white-box {
       background-color: white;
       border-radius: 12px;
-      padding: 30px 40px;
+      padding: 25px 20px;
       margin: 10px auto;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       max-width: 1000px;
+      width: 100%;
     }
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #fff;
-      color: #0e2b54;
-    }
+    
     header, section, footer {
       padding: 20px;
       text-align: center;
     }
+    
     .contact, .form-section {
       background-color: #f5f8fd;
-      padding: 30px 60px;
+      padding: 30px 20px;
     }
+    
     .section-label {
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 800;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
       text-transform: uppercase;
       color: #395b89;
       text-align: center;
       position: relative;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       display: inline-block;
     }
+    
     .section-label::after {
       content: "";
       display: block;
@@ -122,147 +144,180 @@
       margin: 8px auto 0;
       border-radius: 3px;
     }
+    
     .btn {
       background-color: #395b89;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border-radius: 8px;
       display: inline-block;
       font-weight: bold;
-      margin: 30px auto 20px;
+      margin: 20px auto;
       text-align: center;
-      font-size: 16px;
+      font-size: 14px;
       text-transform: uppercase;
       cursor: pointer;
       transition: background-color 0.3s, transform 0.2s;
+      text-decoration: none;
+      border: none;
+      min-height: 44px;
     }
+    
     .btn:hover {
       background-color: #2e4a72;
       transform: scale(1.03);
     }
+    
     .label-btn {
       cursor: default;
       border: none;
       pointer-events: none;
     }
+    
     .two-columns {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      grid-template-columns: 1fr;
+      gap: 15px;
       max-width: 1000px;
       margin: 0 auto;
+      width: 100%;
     }
+    
     .column {
       width: 100%;
     }
+    
     .service-item {
       width: 100%;
       height: 100%;
     }
+    
     .service-item .white-box {
       width: 100%;
-      box-sizing: border-box;
       height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       min-height: 120px;
+      padding: 20px;
     }
+    
     .services {
-      padding: 30px 80px;
+      padding: 30px 20px;
       background-color: #fff;
     }
+    
     .service-item {
       display: flex;
       flex-direction: column;
       text-align: left;
       padding: 0;
     }
-    .service-item .white-box {
-      padding: 25px 20px;
-    }
+    
     .heading-with-icon {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
+      gap: 12px;
+      margin-bottom: 12px;
     }
+    
     .heading-with-icon h4 {
       margin: 0;
       font-size: 18px;
       color: #0f2b54;
+      line-height: 1.3;
     }
+    
     .service-icon {
-      width: 24px;
-      height: 24px;
+      width: 28px;
+      height: 28px;
       object-fit: contain;
+      flex-shrink: 0;
     }
+    
+    .service-item p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #666;
+    }
+    
     .contact .label-btn {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
+    
     .contact-info {
       background-color: #0e2b54;
       color: white;
-      padding: 30px;
+      padding: 25px 20px;
       border-radius: 12px;
       text-align: left;
       max-width: 800px;
       margin: 0 auto;
+      width: 100%;
     }
+    
     .wide-contact {
       display: flex;
       flex-direction: column;
-      gap: 50px;
+      gap: 30px;
     }
+    
     .contact-intro {
       text-align: center;
       margin-bottom: 20px;
     }
+    
     .contact-intro p {
       font-size: 16px;
       line-height: 1.6;
       color: white;
       margin: 0;
     }
+    
     .contact-main {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 25px;
     }
+    
     .left-contact {
-      flex: 1;
-      min-width: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
       text-align: center;
-      padding-top: 40px;
+      padding: 15px 0;
     }
+    
+    .left-contact h3 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    
     .right-contact {
-      flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 30px;
-      min-width: 100px;
-      padding-right:10 px;
+      gap: 20px;
     }
+    
     .contact-line {
       display: flex;
       align-items: flex-start;
-      gap:10px;
-      margin-bottom: 10px;
+      gap: 15px;
+      padding: 10px 0;
     }
+    
     .contact-line img {
-      width: 22px;
-      height: 20px;
+      width: 24px;
+      height: 22px;
       flex-shrink: 0;
+      margin-top: 2px;
     }
+    
     .text-block {
       display: flex;
       flex-direction: column;
+      flex: 1;
     }
+    
     .contact-label {
       margin-bottom: 4px;
       font-size: 12px;
@@ -271,70 +326,258 @@
       letter-spacing: 1px;
       color: rgba(255,255,255,0.7);
     }
+    
     .contact-value {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 500;
       color: white;
+      word-break: break-word;
     }
+    
     .qr-section {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 20px;
+      padding: 30px 20px;
     }
+    
     .qr-section .label-btn {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
+    
     .qr-section .white-box {
       max-width: 250px;
-      padding: 30px;
+      padding: 25px;
       display: flex;
       justify-content: center;
       align-items: center;
     }
+    
     .qr-section img {
-      width: 180px;
-      height: 180px;
+      width: 160px;
+      height: 160px;
+      max-width: 100%;
     }
+    
     form {
       max-width: 400px;
       margin: auto;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 15px;
+      width: 100%;
     }
+    
     .form-section .label-btn {
-      margin-bottom: 50px;
+      margin-bottom: 30px;
     }
+    
+    .form-section .white-box {
+      padding: 30px 20px;
+    }
+    
+    .form-section a {
+      color: #395b89;
+      font-weight: bold;
+      text-decoration: underline;
+      word-break: break-word;
+    }
+    
     input, textarea {
-      padding: 10px;
+      padding: 12px;
       border: 1px solid #ccc;
       border-radius: 6px;
       font-family: inherit;
       resize: vertical;
+      font-size: 16px;
+      min-height: 44px;
     }
+    
+    .map-container {
+      width: 100%;
+      max-width: 1000px;
+      height: 250px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    
     iframe {
       width: 100%;
-      height: 250px;
+      height: 100%;
       border: none;
+      border-radius: 10px;
     }
+    
     img {
       max-width: 100%;
+      height: auto;
     }
-    @media (max-width: 768px) {
+    
+    /* Tablet styles */
+    @media (min-width: 768px) {
+      .banner {
+        height: 450px;
+        padding: 40px 30px;
+      }
+      
+      .logo-row img {
+        width: 70px;
+      }
+      
+      .company-name {
+        font-size: 28px;
+      }
+      
+      .slogan-text {
+        font-size: 40px;
+        margin-top: 50px;
+        margin-left: 40px;
+      }
+      
+      .header-right .tagline {
+        font-size: 16px;
+      }
+      
       .two-columns {
-        grid-template-columns: 1fr;
-        gap: 15px;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
       }
-      .contact-main {
-        flex-direction: column;
-        gap: 30px;
-      }
-      .left-contact {
-        text-align: center;
-      }
+      
       .services {
-        padding: 30px 20px;
+        padding: 40px 30px;
+      }
+      
+      .contact, .form-section {
+        padding: 40px 30px;
+      }
+      
+      .contact-main {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+      
+      .left-contact {
+        flex: 1;
+        text-align: left;
+        padding-top: 20px;
+      }
+      
+      .right-contact {
+        flex: 1;
+        gap: 25px;
+      }
+      
+      .contact-info {
+        padding: 35px 30px;
+      }
+      
+      .map-container {
+        height: 300px;
+      }
+    }
+    
+    /* Desktop styles */
+    @media (min-width: 1024px) {
+      .banner {
+        height: 400px;
+        padding: 30px 40px;
+      }
+      
+      .logo-row img {
+        width: 80px;
+      }
+      
+      .company-name {
+        font-size: 30px;
+      }
+      
+      .slogan-text {
+        font-size: 45px;
+        margin-top: 60px;
+        margin-left: 80px;
+        max-width: 500px;
+      }
+      
+      .header-right {
+        margin-right: 60px;
+      }
+      
+      .header-right .tagline {
+        font-size: 18px;
+      }
+      
+      .services {
+        padding: 30px 80px;
+      }
+      
+      .contact, .form-section {
+        padding: 30px 60px;
+      }
+      
+      .contact-main {
+        gap: 50px;
+      }
+      
+      .left-contact {
+        justify-content: center;
+        text-align: center;
+        padding-top: 40px;
+      }
+      
+      .right-contact {
+        gap: 30px;
+        padding-right: 10px;
+      }
+      
+      .contact-info {
+        padding: 30px;
+      }
+      
+      .section-label {
+        font-size: 16px;
+        letter-spacing: 4px;
+        margin-bottom: 40px;
+      }
+      
+      .qr-section {
+        padding: 40px 20px;
+      }
+      
+      .qr-section .label-btn {
+        margin-bottom: 40px;
+      }
+      
+      .qr-section img {
+        width: 180px;
+        height: 180px;
+      }
+      
+      .form-section .label-btn {
+        margin-bottom: 50px;
+      }
+    }
+    
+    /* Large desktop styles */
+    @media (min-width: 1200px) {
+      .two-columns {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    /* Touch-friendly improvements */
+    @media (hover: none) and (pointer: coarse) {
+      .btn {
+        min-height: 48px;
+        padding: 14px 24px;
+      }
+      
+      input, textarea {
+        min-height: 48px;
+        padding: 14px;
+      }
+      
+      .contact-line {
+        padding: 12px 0;
       }
     }
   </style>
@@ -356,6 +599,7 @@
       </div>
     </div>
   </header>
+
   <section class="services">
     <div class="section-label">OUR SERVICES</div>
     <div class="two-columns">
@@ -427,6 +671,7 @@
       </div>
     </div>
   </section>
+
   <section class="contact">
     <div class="section-label">CONTACT US</div>
     <div class="contact-info">
@@ -465,23 +710,26 @@
       </div>
     </div>
   </section>
+
   <section class="qr-section">
     <div class="section-label">SCAN & CONNECT</div>
     <div class="white-box">
       <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.adglobalconsultancy.com" alt="QR Code">
     </div>
   </section>
+
   <section class="form-section">
     <div class="section-label">INQUIRIES</div>
     <div class="white-box">
       <p style="text-align: center; font-size: 16px; margin-bottom: 20px;">
-        For inquiries, <a href="https://adglobalconsultancy.com/contact-us/" style="color: #395b89; font-weight: bold; text-decoration: underline;">click here</a>
+        For inquiries, <a href="https://adglobalconsultancy.com/contact-us/">click here</a>
       </p>
     </div>
   </section>  
+
   <section>
-    <div style="width: 1000px; height: 300px; margin: auto;">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d859.2219836561787!2d77.63281067763099!3d13.032693901994891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s%235%2C%20Hennur%20Main%20Road%2C%20Bengaluru%20%E2%80%93%20560077!5e0!3m2!1sen!2sin!4v1751525637318!5m2!1sen!2sin" width="100%" height="100%" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d859.2219836561787!2d77.63281067763099!3d13.032693901994891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s%235%2C%20Hennur%20Main%20Road%2C%20Bengaluru%20%E2%80%93%20560077!5e0!3m2!1sen!2sin!4v1751525637318!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
 </body>
