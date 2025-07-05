@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,7 +79,6 @@
       margin: 0;
       line-height: 1.2;
       text-align: center;
-
     }
     
     .slogan-text {
@@ -106,6 +106,76 @@
       color: white;
     }
     
+    /* Founder section styles - Updated */
+    .founder-section {
+      background: white;
+      padding: 50px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .founder-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      z-index: 0;
+    }
+    
+    .founder-container {
+      max-width: 500px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .founder-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #395b89;
+      margin: 0 auto 20px;
+      display: block;
+      object-fit: cover;
+      box-shadow: 0 8px 25px rgba(57, 91, 137, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .founder-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 35px rgba(57, 91, 137, 0.3);
+    }
+    
+    .founder-name {
+      font-size: 28px;
+      font-weight: 700;
+      color: #395b89;
+      margin: 0 0 8px 0;
+      letter-spacing: 0.5px;
+    }
+    
+    .founder-title {
+      font-size: 16px;
+      color: #666;
+      margin: 0 0 15px 0;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .founder-description {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+      max-width: 400px;
+      margin: 0 auto;
+      font-style: italic;
+    }
+    
     .white-box {
       background-color: white;
       border-radius: 12px;
@@ -121,7 +191,7 @@
       text-align: center;
     }
     
-    .contact, .form-section {
+    .contact, .qr-section, .form-section {
       background-color: #f5f8fd;
       padding: 30px 20px;
     }
@@ -207,7 +277,7 @@
     
     .services {
       padding: 30px 20px;
-      background-color: #fff;
+      background-color: #f5f8fd;
     }
     
     .service-item {
@@ -341,27 +411,194 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 30px 20px;
+      padding: 40px 20px 20px 20px;
+      position: relative;
     }
     
     .qr-section .label-btn {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+    }
+    
+    .qr-container {
+      position: relative;
+      max-width: 320px;
+      width: 100%;
+      margin: 0 auto;
     }
     
     .qr-section .white-box {
-      max-width: 250px;
-      padding: 25px;
+      max-width: 280px;
+      padding: 30px;
       display: flex;
       justify-content: center;
       align-items: center;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+    
+    .qr-section .white-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(57, 91, 137, 0.1) 50%, transparent 70%);
+      animation: shimmer 3s ease-in-out infinite;
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
     }
     
     .qr-section img {
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       max-width: 100%;
+      border-radius: 10px;
+      position: relative;
+      z-index: 2;
     }
     
+    .scan-instruction {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #395b89 0%, #2a4a72 100%);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(57, 91, 137, 0.3);
+      z-index: 3;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: translateX(-50%) scale(1); }
+      50% { transform: translateX(-50%) scale(1.05); }
+    }
+    
+    .scan-corners {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+      pointer-events: none;
+      z-index: 3;
+    }
+    
+    .scan-corner {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border: 3px solid #395b89;
+      animation: scanCorners 2s ease-in-out infinite;
+    }
+    
+    .scan-corner.top-left {
+      top: 0;
+      left: 0;
+      border-right: none;
+      border-bottom: none;
+      border-radius: 8px 0 0 0;
+    }
+    
+    .scan-corner.top-right {
+      top: 0;
+      right: 0;
+      border-left: none;
+      border-bottom: none;
+      border-radius: 0 8px 0 0;
+    }
+    
+    .scan-corner.bottom-left {
+      bottom: 0;
+      left: 0;
+      border-right: none;
+      border-top: none;
+      border-radius: 0 0 0 8px;
+    }
+    
+    .scan-corner.bottom-right {
+      bottom: 0;
+      right: 0;
+      border-left: none;
+      border-top: none;
+      border-radius: 0 0 8px 0;
+    }
+    
+    @keyframes scanCorners {
+      0%, 100% { 
+        opacity: 0.7;
+        transform: scale(1);
+      }
+      50% { 
+        opacity: 1;
+        transform: scale(1.1);
+      }
+    }
+    
+    .scanning-line {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #395b89, transparent);
+      animation: scanLine 2s ease-in-out infinite;
+      z-index: 3;
+    }
+    
+    @keyframes scanLine {
+      0% { 
+        transform: translateY(0);
+        opacity: 0;
+      }
+      10% { 
+        opacity: 1;
+      }
+      90% { 
+        opacity: 1;
+      }
+      100% { 
+        transform: translateY(200px);
+        opacity: 0;
+      }
+    }
+    
+    .scan-text {
+      margin-top: 20px;
+      text-align: center;
+      color: #395b89;
+      font-weight: 600;
+      font-size: 16px;
+      animation: fadeInOut 3s ease-in-out infinite;
+    }
+    
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+    
+    .phone-icon {
+      display: inline-block;
+      margin-right: 8px;
+      animation: phoneWiggle 2s ease-in-out infinite;
+    }
+    
+    @keyframes phoneWiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-5deg); }
+      75% { transform: rotate(5deg); }
+    }
+     
     form {
       max-width: 400px;
       margin: auto;
@@ -374,7 +611,9 @@
     .form-section .label-btn {
       margin-bottom: 30px;
     }
-    
+    .form-section {
+      padding: 10px 20px 30px 20px;
+    }
     .form-section .white-box {
       padding: 30px 20px;
     }
@@ -385,7 +624,10 @@
       text-decoration: underline;
       word-break: break-word;
     }
-    
+    .form-section a.btn {
+      color: white;
+      text-decoration: none;
+  }
     input, textarea {
       padding: 12px;
       border: 1px solid #ccc;
@@ -469,6 +711,23 @@
         font-size: 14px;
       }
       
+      .founder-section {
+        padding: 60px 30px;
+      }
+      
+      .founder-image {
+        width: 200px;
+        height: 200px;
+      }
+      
+      .founder-name {
+        font-size: 32px;
+      }
+      
+      .founder-title {
+        font-size: 18px;
+      }
+      
       .two-columns {
         grid-template-columns: 1fr 1fr;
         gap: 20px;
@@ -481,7 +740,13 @@
       .contact, .form-section {
         padding: 40px 30px;
       }
+      .qr-section {
+        padding: 40px 30px 20px 30px;
+      }
       
+      .form-section {
+        padding: 20px 30px 40px 30px;
+      }
       .contact-main {
         flex-direction: row;
         align-items: flex-start;
@@ -490,7 +755,8 @@
       .left-contact {
         flex: 1;
         text-align: left;
-        padding-top: 20px;
+        padding-top: 80px;
+        padding-left: 100px;
       }
       
       .right-contact {
@@ -537,6 +803,15 @@
         font-size: 16px;
       }
       
+      .founder-section {
+        padding: 70px 50px;
+      }
+      
+      .founder-image {
+        width: 160px;
+        height: 160px;
+      }
+      
       .services {
         padding: 30px 60px;
       }
@@ -544,7 +819,13 @@
       .contact, .form-section {
         padding: 30px 50px;
       }
+      .qr-section {
+        padding: 30px 50px 15px 50px;
+      }
       
+      .form-section {
+        padding: 15px 50px 30px 50px;
+      }
       .contact-main {
         gap: 40px;
       }
@@ -552,7 +833,7 @@
       .left-contact {
         justify-content: center;
         text-align: center;
-        padding-top: 30px;
+        padding-top: 80px;
       }
       
       .right-contact {
@@ -612,6 +893,10 @@
         font-size: 18px;
       }
       
+      .founder-section {
+        padding: 80px 80px;
+      }
+      
       .services {
         padding: 30px 80px;
       }
@@ -619,13 +904,21 @@
       .contact, .form-section {
         padding: 30px 60px;
       }
+      .qr-section {
+        padding: 30px 60px 15px 60px;
+      }
+      
+      .form-section {
+        padding: 15px 60px 30px 60px;
+      }
       
       .contact-main {
         gap: 50px;
       }
       
       .left-contact {
-        padding-top: 40px;
+        padding-top: 80px;
+        padding-left: 100px;
       }
       
       .two-columns {
@@ -668,6 +961,15 @@
       </div>
     </div>
   </header>
+
+  <section class="founder-section">
+    <div class="founder-container">
+      <img src="AK.png" alt="Ankit Kukreja" class="founder-image">
+      <h2 class="founder-name">Ankit Kukreja</h2>
+      <p class="founder-title">Investment Banker</p>
+      <p class="founder-description">Leading financial excellence with strategic insights and comprehensive advisory services</p>
+    </div>
+  </section>
 
   <section class="services">
     <div class="section-label">OUR SERVICES</div>
@@ -757,7 +1059,7 @@
               <img src="mail.png" alt="Email Icon">
               <div class="text-block">
                 <div class="contact-label">Email</div>
-                <div class="contact-value">ankitkukreja1997@gmail.com</div>
+                <div class="contact-value">ankit@adglobalconsultancy.com</div>
               </div>
             </div>
             <div class="contact-line">
@@ -782,19 +1084,36 @@
 
   <section class="qr-section">
     <div class="section-label">SCAN & CONNECT</div>
-    <div class="white-box">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.adglobalconsultancy.com" alt="QR Code">
+    <div class="qr-container">
+      <div class="scan-instruction">
+        <span class="phone-icon">📱</span>
+        Scan Me!
+      </div>
+      <div class="white-box">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.adglobalconsultancy.com" alt="QR Code">
+        <div class="scan-corners">
+          <div class="scan-corner top-left"></div>
+          <div class="scan-corner top-right"></div>
+          <div class="scan-corner bottom-left"></div>
+          <div class="scan-corner bottom-right"></div>
+        </div>
+        <div class="scanning-line"></div>
+      </div>
+      <div class="scan-text">
+        Point your camera here to visit our website
+      </div>
     </div>
   </section>
 
   <section class="form-section">
     <div class="section-label">INQUIRIES</div>
     <div class="white-box">
-      <p style="text-align: center; font-size: 16px; margin-bottom: 20px;">
-        For inquiries, <a href="https://adglobalconsultancy.com/contact-us/">click here</a>
+      <p style="text-align: center; font-size: 16px; margin-bottom: 25px; color: #395b89;">
+        Ready to discuss your financial goals? Schedule a consultation with our experts today.
       </p>
+      <a href="https://adglobalconsultancy.com/contact-us/" class="btn" style="display: block; width: fit-content; margin: auto;">Book a Consultation</a>
     </div>
-  </section>  
+  </section>
 
   <section>
     <div class="map-container">
